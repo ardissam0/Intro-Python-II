@@ -1,6 +1,6 @@
 from room import Room
 from player import Player
-
+from item import Item 
 # Declare all the rooms
 
 room = {
@@ -40,7 +40,23 @@ room['treasure'].s_to = room['narrow']
 
 # Make a new player object that is currently in the 'outside' room.
 
-player = Player(room['outside'])
+player = Player("Sam", room['outside'])
+
+stick = Item("Stick", "A fallen branch.")
+meat = Item("Meat", "Grab something to eat")
+axe = Item("Axe", "A rusty axe from an old battle")
+sword = Item("Sword", "A finely crafted sword")
+gold = Item("Gold", "Coins to buy other items")
+scroll = Item("Scroll", "Ancient writings, may be worth something")
+
+room["outside"].items.append(stick)
+room["outside".items.append(axe)
+room["foyer"].items.append(sword)
+room["overlook"].items.append(scroll)]
+room["overlook"].items.append(sword)
+room["narrow"].items.append(meat)
+room["treasure"].items.append(gold)
+
 
 # Write a loop that:
 while True:
@@ -48,6 +64,8 @@ while True:
 # * Prints the current room name
     print(player.location)
 # * Prints the current description (the textwrap module might be useful here).
+    print(f"{player.current_room}")
+
 # * Waits for user input and decides what to do.
 #
 # If the user enters a cardinal direction, attempt to move to the room there.
@@ -57,6 +75,7 @@ while True:
    command = input("> ").split(',')
 ​
     if command[0] == 'q':
+        print("Goodbye")
         break
     elif command[0] == 'n':
         # check if the player can move to the north 
