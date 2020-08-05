@@ -28,7 +28,7 @@ class Room:
         else:
             return None
 
-    def add_item(self, item):
+    def add_items(self, item):
         self.items.append(item)
 
     def take_item(self, item):

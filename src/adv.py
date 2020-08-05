@@ -50,21 +50,85 @@ gold = Item("Gold", "Coins to buy other items")
 scroll = Item("Scroll", "Ancient writings, may be worth something")
 
 room["outside"].items.append(stick)
-room["outside".items.append(axe)
+room["outside"].items.append(axe)
 room["foyer"].items.append(sword)
-room["overlook"].items.append(scroll)]
+room["overlook"].items.append(scroll)
 room["overlook"].items.append(sword)
 room["narrow"].items.append(meat)
 room["treasure"].items.append(gold)
 
 
 # Write a loop that:
-while True:
-#
+
+directions = ['n', 's', 'e', 'w']
+
 # * Prints the current room name
-    print(player.location)
+print(player.location)
+
+while True:
+    command = input("Enter valid input: ")
+    if command in directions:
+        player.move(command)
+
+    elif command == 'inv':
+        player.toggle_inventory()
+
+    elif command == 'grab stick':
+        player.add_item(stick)
+        player.location.take_item(stick)
+
+    elif command == 'drop stick':
+        player.drop_item(stick)
+        player.location.add_items(stick)
+
+    elif command == 'grab axe':
+        player.add_item(axe)
+        player.location.take_item(axe)
+
+    elif command == 'drop axe':
+        player.drop_item(axe)
+        player.location.add_items(axe)
+
+    elif command == 'grab sword':
+        player.add_item(sword)
+        player.location.take_item(sword)
+
+    elif command == 'drop sword':
+        player.drop_item(sword)
+        player.location.add_items(sword)
+
+    elif command == 'grab meat':
+        player.add_item(meat)
+        player.location.take_item(meat)
+
+    elif command == 'drop meat':
+        player.drop_item(meat)
+        player.location.add_items(meat)
+
+    elif command == 'grab gold':
+        player.add_item(gold)
+        player.location.take_item(gold)
+
+    elif command == 'drop gold':
+        player.drop_item(gold)
+        player.location.add_items(gold)
+
+    elif command == 'grab scroll':
+        player.add_item(scroll)
+        player.location.take_item(scroll)
+
+    elif command == 'drop scroll':
+        player.drop_item(scroll)
+        player.location.add_items(scroll)
+    
+    elif command == 'q':
+        print("Goodbye for now!")
+        break
+
+    else:
+        print("Error, Choose valid input!")
+    
 # * Prints the current description (the textwrap module might be useful here).
-    print(f"{player.current_room}")
 
 # * Waits for user input and decides what to do.
 #
@@ -72,16 +136,3 @@ while True:
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
-   command = input("> ").split(',')
-​
-    if command[0] == 'q':
-        print("Goodbye")
-        break
-    elif command[0] == 'n':
-        # check if the player can move to the north 
-        # if there is, set that north room as the player's location 
-    elif command[0] == 's':
-    
-    elif command[0] == 'e':
-​
-

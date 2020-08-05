@@ -7,7 +7,7 @@ class Item:
         return f"{self.name}, Description: {self.description}"
 
     def take_it(self):
-        print(f"You picked up a{self.name}")
+        print(f"You picked up the, {self.name}")
 
     def drop_it(self):
-        print(f"You dropped a {self.name}")
+        print(f"You dropped the, {self.name}")
